@@ -1,20 +1,22 @@
 package com.manish.anonchat.view;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.manish.anonchat.R;
-import com.manish.anonchat.databinding.FragmentGetStartedBinding;
+import com.manish.anonchat.databinding.FragmentMessagesBinding;
+import com.manish.anonchat.databinding.FragmentWelcomeBinding;
 
-public class GetStarted extends Fragment {
+public class Messages extends Fragment {
 
-    private FragmentGetStartedBinding binding;
+    private FragmentMessagesBinding binding;
 
     @Override
     public View onCreateView(
@@ -22,16 +24,17 @@ public class GetStarted extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentGetStartedBinding.inflate(inflater, container, false);
+        binding = FragmentMessagesBinding.inflate(inflater, container, false);
         return binding.getRoot();
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.getStarted.setOnClickListener(v ->
-                NavHostFragment.findNavController(GetStarted.this)
-                        .navigate(R.id.action_GetStarted_to_DOB)
+        binding.getMessages.setOnClickListener(v ->
+                NavHostFragment.findNavController(Messages.this)
+                        .navigate(R.id.action_Messages_to_Welcome)
         );
     }
 
@@ -40,5 +43,4 @@ public class GetStarted extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

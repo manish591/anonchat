@@ -37,4 +37,26 @@
             android:id="@+id/action_Username_to_DOB"
             app:destination="@id/GetStarted" />
     </fragment>
+
+    <fragment
+        android:id="@+id/Welcome"
+        android:name="com.manish.anonchat.view.Welcome"
+        android:label="@string/welcome_fragment_label"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_Welcome_to_Messages"
+            app:destination="@id/Messages" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Messages"
+        android:name="com.manish.anonchat.view.Messages"
+        android:label="@string/messages_fragment_label"
+        tools:layout="@layout/fragment_messages">
+
+        <action
+            android:id="@+id/action_Messages_to_Welcome"
+            app:destination="@id/Welcome" />
+    </fragment>
 </navigation>

@@ -5,6 +5,8 @@
     <string name="get_started_fragment_label">Get Started</string>
     <string name="dob_fragment_label">Date Of Birth</string>
     <string name="username_fragment_label">Username</string>
+    <string name="welcome_fragment_label">Welcome</string>
+    <string name="messages_fragment_label">Messages</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -17,4 +19,6 @@
     <string name="choose_username">Choose a username</string>
     <string name="enter_username">Enter Username</string>
     <string name="create_account">Create Account</string>
+    <string name="copy_link">Copy link</string>
+    <string name="get_messages">Get Messages</string>
 </resources>

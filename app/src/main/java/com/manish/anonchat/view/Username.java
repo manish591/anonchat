@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.manish.anonchat.R;
-import com.manish.anonchat.databinding.FragmentGetStartedBinding;
 import com.manish.anonchat.databinding.FragmentUsernameBinding;
 
 public class Username extends Fragment {
@@ -33,7 +32,7 @@ public class Username extends Fragment {
 
         binding.createAccount.setOnClickListener(v ->
                 NavHostFragment.findNavController(Username.this)
-                        .navigate(R.id.action_GetStarted_to_DOB)
+                        .navigate(R.id.action_Username_to_DOB)
         );
     }
 
