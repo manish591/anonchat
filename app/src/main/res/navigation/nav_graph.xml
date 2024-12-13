@@ -12,18 +12,7 @@
         tools:layout="@layout/fragment_get_started">
 
         <action
-            android:id="@+id/action_GetStarted_to_DOB"
-            app:destination="@id/DateOfBirth" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/DateOfBirth"
-        android:name="com.manish.anonchat.view.DateOfBirth"
-        android:label="@string/dob_fragment_label"
-        tools:layout="@layout/fragment_date_of_birth">
-
-        <action
-            android:id="@+id/action_DOB_to_Username"
+            android:id="@+id/action_GetStarted_to_Username"
             app:destination="@id/Username" />
     </fragment>
 
@@ -34,7 +23,7 @@
         tools:layout="@layout/fragment_username">
 
         <action
-            android:id="@+id/action_Username_to_DOB"
+            android:id="@+id/action_Username_to_GetStarted"
             app:destination="@id/GetStarted" />
     </fragment>
 

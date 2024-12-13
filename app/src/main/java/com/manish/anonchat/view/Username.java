@@ -32,7 +32,7 @@ public class Username extends Fragment {
 
         binding.createAccount.setOnClickListener(v ->
                 NavHostFragment.findNavController(Username.this)
-                        .navigate(R.id.action_Username_to_DOB)
+                        .navigate(R.id.action_Username_to_GetStarted)
         );
     }
 

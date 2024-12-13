@@ -31,7 +31,7 @@ public class GetStarted extends Fragment {
 
         binding.getStarted.setOnClickListener(v ->
                 NavHostFragment.findNavController(GetStarted.this)
-                        .navigate(R.id.action_GetStarted_to_DOB)
+                        .navigate(R.id.action_GetStarted_to_Username)
         );
     }
 

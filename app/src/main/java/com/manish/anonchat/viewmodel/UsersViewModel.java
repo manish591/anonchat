@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.manish.anonchat.model.Users;
 
-import java.sql.Timestamp;
-
 public class UsersViewModel extends ViewModel {
     private MutableLiveData<Users> usersData;
 
@@ -21,14 +19,6 @@ public class UsersViewModel extends ViewModel {
 
     public LiveData<Users> getUsersData() {
         return usersData;
-    }
-
-    public void setDateOfBirth(Timestamp dob) {
-        if(usersData.getValue() != null) {
-            Users updatedUsers = usersData.getValue();
-            updatedUsers.setDOB(dob);
-            setUsersData(updatedUsers);
-        }
     }
 
     public void setUsername(String username) {
