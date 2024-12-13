@@ -3,26 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/GetStarted">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.manish.anonchat.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/GetStarted"
+        android:name="com.manish.anonchat.view.GetStarted"
+        android:label="@string/get_started_fragment_label"
+        tools:layout="@layout/fragment_get_started">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_GetStarted_to_DOB"
+            app:destination="@id/DateOfBirth" />
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.manish.anonchat.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/DateOfBirth"
+        android:name="com.manish.anonchat.view.DateOfBirth"
+        android:label="@string/dob_fragment_label"
+        tools:layout="@layout/fragment_date_of_birth">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_DOB_to_Username"
+            app:destination="@id/Username" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Username"
+        android:name="com.manish.anonchat.view.Username"
+        android:label="@string/username_fragment_label"
+        tools:layout="@layout/fragment_username">
+
+        <action
+            android:id="@+id/action_Username_to_DOB"
+            app:destination="@id/GetStarted" />
     </fragment>
 </navigation>

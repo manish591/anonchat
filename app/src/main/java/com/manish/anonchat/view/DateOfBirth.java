@@ -1,4 +1,4 @@
-package com.manish.anonchat;
+package com.manish.anonchat.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.manish.anonchat.databinding.FragmentSecondBinding;
+import com.manish.anonchat.R;
+import com.manish.anonchat.databinding.FragmentDateOfBirthBinding;
 
-public class SecondFragment extends Fragment {
+public class DateOfBirth extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private FragmentDateOfBirthBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,17 +22,16 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentDateOfBirthBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(v ->
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment)
+        binding.dobContinue.setOnClickListener(v ->
+                NavHostFragment.findNavController(DateOfBirth.this)
+                        .navigate(R.id.action_DOB_to_Username)
         );
     }
 
