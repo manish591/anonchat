@@ -28,12 +28,4 @@ public class UsersViewModel extends ViewModel {
             setUsersData(updatedUsers);
         }
     }
-
-    public void setUserId(String user_id) {
-        if(usersData.getValue() != null) {
-            Users updatedUsers = usersData.getValue();
-            updatedUsers.setUserId(user_id);
-            setUsersData(updatedUsers);
-        }
-    }
 }

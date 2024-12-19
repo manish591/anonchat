@@ -1,5 +1,6 @@
 package com.manish.anonchat.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private SharedPreferences sharedPref;
+    public static String SHARED_PREF_TABLE = "SHARED_PREF_TABLE";
+    public static String SHARED_PREF_KEY = "USER_ID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        sharedPref = getSharedPreferences(SHARED_PREF_TABLE, MODE_PRIVATE);
+        String user_id = sharedPref.getString(SHARED_PREF_KEY, null);
+
+        if(user_id != null) {
+            navController.navigate(R.id.Welcome);
+            return;
+        }
     }
 
     @Override
