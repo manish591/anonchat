@@ -5,6 +5,9 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.manish.anonchat.view.MainActivity.SHARED_PREF_KEY;
 import static com.manish.anonchat.view.MainActivity.SHARED_PREF_TABLE;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -19,13 +22,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.manish.anonchat.R;
 import com.manish.anonchat.databinding.FragmentWelcomeBinding;
-
-import java.util.Map;
 
 public class Welcome extends Fragment {
 
@@ -49,6 +49,13 @@ public class Welcome extends Fragment {
                         .navigate(R.id.action_Welcome_to_Messages)
         );
 
+        binding.copyLink.setOnClickListener(v -> {
+            String userProfileLink = binding.link.getText().toString();
+            ClipboardManager clipboardManager = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clipData = ClipData.newPlainText("Profile", userProfileLink);
+            clipboardManager.setPrimaryClip(clipData);
+        });
+
         getUserData();
     }
 
@@ -68,7 +75,8 @@ public class Welcome extends Fragment {
                 public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                     if (!queryDocumentSnapshots.isEmpty()) {
                         String username = queryDocumentSnapshots.getDocuments().get(0).getString("username");
-                        binding.link.setText("https://anon-chat-web.vercel.app/" + username);
+                        String userProfile = getString(R.string.base_profile_url) + username;
+                        binding.link.setText(userProfile);
                     } else {
                         Toast.makeText(requireActivity(), "User not found", Toast.LENGTH_SHORT).show();
                     }

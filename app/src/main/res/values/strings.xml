@@ -30,5 +30,6 @@
     <string name="send_me_anonymouse_messages">send me anonymous messages here</string>
     <string name="copy_your_link">Copy your link</string>
     <string name="test_link">https://anon-chat-web.vercel.app/manish18</string>
-    <string name="delete_account">delete account</string>">
+    <string name="delete_account">delete account</string>
+    <string name="base_profile_url">https://anon-chat-web.vercel.app/</string>">
 </resources>
