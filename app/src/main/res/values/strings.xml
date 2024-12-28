@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AnonChat</string>
+    <string name="app_name">anonchat</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="get_started_fragment_label">Get Started</string>
@@ -16,9 +16,19 @@
     <string name="get_started">Get Started</string>
     <string name="enter_dob">Enter DOB</string>
     <string name="button_continue">Continue</string>
-    <string name="choose_username">Choose a username</string>
+    <string name="choose_username">Choose a\nusername</string>
     <string name="enter_username">Enter Username</string>
     <string name="create_account">Create Account</string>
     <string name="copy_link">Copy link</string>
     <string name="get_messages">Get Messages</string>
+    <string name="app_title">Create Fun, Share Laughs, Stay Anonymous!</string>
+    <string name="safety_policy">We do not collect any of the users data. Feel free to share message anonymously</string>
+    <string name="layout_pattern">layout pattern</string>
+    <string name="back">back</string>
+    <string name="inbox">Inbox</string>
+    <string name="play">Play</string>
+    <string name="send_me_anonymouse_messages">send me anonymous messages here</string>
+    <string name="copy_your_link">Copy your link</string>
+    <string name="test_link">https://anon-chat-web.vercel.app/manish18</string>
+    <string name="delete_account">delete account</string>">
 </resources>

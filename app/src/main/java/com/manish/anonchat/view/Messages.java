@@ -50,11 +50,6 @@ public class Messages extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.getMessages.setOnClickListener(v ->
-                NavHostFragment.findNavController(Messages.this)
-                        .navigate(R.id.action_Messages_to_Welcome)
-        );
     }
 
     @Override

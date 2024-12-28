@@ -6,81 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".view.Welcome">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/app_name"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.15"
+        android:contentDescription="@string/layout_pattern"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pattern" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
+        android:id="@+id/welcomeButtonContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="You can send me \nanonymouse messages"
-        android:textAlignment="center"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Copy Link"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <Button
+            android:id="@+id/viewPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle"/>
 
-    <TextView
-        android:id="@+id/link"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="manish/jdhh"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        <Button
+            android:id="@+id/viewMessages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/inbox"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            style="?android:attr/buttonBarButtonStyle"/>
 
-    <Button
-        android:id="@+id/copyLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/copy_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/link" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/viewMessages"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/welcomeCard"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/copyLink"
-        android:text="View messages"/>
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingHorizontal="40dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/welcomeButtonContainer">
 
-    <Button
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/send_me_anonymouse_messages"
+            android:textAlignment="center"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/copyLinkContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Delete Account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewMessages" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:padding="40dp"
+        android:background="@drawable/light_bg"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/welcomeCard">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/copy_your_link"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:text="@string/test_link"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/copyLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="30dp"
+            android:text="@string/copy_link"
+            android:layout_gravity="center"
+            android:background="@drawable/copy_bg"/>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

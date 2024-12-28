@@ -6,22 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".view.GetStarted">
 
+    <ImageView
+        android:contentDescription="@string/layout_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pattern"
+        android:scaleType="centerCrop"
+        android:alpha="0.15"/>
+
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:textSize="60sp"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/getStarted"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/getStarted"
+        style="@style/Base.Theme.AnonChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/neobrutalism_bg"
+        android:paddingTop="16dp"
+        android:paddingBottom="20dp"
+        android:text="@string/get_started"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/safetyPolicy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/safetyPolicy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/get_started"
+        android:text="@string/safety_policy"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:paddingHorizontal="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
