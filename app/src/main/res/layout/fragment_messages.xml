@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Messages">
+    tools:context=".view.home.Messages">
 
     <ImageView
         android:id="@+id/imageView"
@@ -48,22 +48,12 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:paddingVertical="20dp"
-        android:paddingHorizontal="40dp"
+    <ListView
+        android:id="@+id/messagesList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeButtonContainer">
-
-        <ListView
-            android:id="@+id/messagesList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    </ScrollView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeButtonContainer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

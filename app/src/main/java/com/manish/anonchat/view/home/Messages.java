@@ -1,4 +1,4 @@
-package com.manish.anonchat.view;
+package com.manish.anonchat.view.home;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.manish.anonchat.view.MainActivity.SHARED_PREF_KEY;
@@ -9,7 +9,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +20,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.manish.anonchat.R;
 import com.manish.anonchat.databinding.FragmentMessagesBinding;
 
 import java.util.ArrayList;
@@ -78,7 +76,7 @@ public class Messages extends Fragment {
                     }
 
                     adapter.notifyDataSetChanged();
-                    Toast.makeText(requireActivity(), "Messages fetched" + items.size(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireActivity(), "Messages fetched", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(requireActivity(), "No messages", Toast.LENGTH_SHORT).show();
                 }

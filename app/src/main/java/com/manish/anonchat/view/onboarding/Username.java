@@ -1,4 +1,4 @@
-package com.manish.anonchat.view;
+package com.manish.anonchat.view.onboarding;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -11,6 +11,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +45,11 @@ public class Username extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_TABLE, MODE_PRIVATE);
 
+        binding.backButton.setOnClickListener(v -> {
+            ViewPager2 viewPager2 = requireActivity().findViewById(R.id.onboardingViewPager);
+            viewPager2.setCurrentItem(0, true);
+        });
+
         binding.createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +67,7 @@ public class Username extends Fragment {
                     public void onSuccess(DocumentReference documentReference) {
                         sharedPref.edit().putString(SHARED_PREF_KEY, newUser.getUsername()).apply();
                         NavHostFragment.findNavController(Username.this)
-                                .navigate(R.id.Welcome);
+                                .navigate(R.id.action_onboardingViewPager_to_homeViewPager);
                     }
                 });
             }
