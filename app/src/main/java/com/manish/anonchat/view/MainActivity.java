@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         String user_id = sharedPref.getString(SHARED_PREF_KEY, null);
 
         if(user_id != null) {
-            navController.navigate(R.id.Welcome);
+            navController.navigate(R.id.action_onboardingViewPager_to_homeViewPager);
             return;
         }
     }

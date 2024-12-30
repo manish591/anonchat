@@ -3,49 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/GetStarted">
+    app:startDestination="@id/onboardingViewPager">
 
     <fragment
-        android:id="@+id/GetStarted"
-        android:name="com.manish.anonchat.view.GetStarted"
-        android:label="@string/get_started_fragment_label"
-        tools:layout="@layout/fragment_get_started">
-
+        android:id="@+id/onboardingViewPager"
+        android:name="com.manish.anonchat.view.onboarding.OnboardingViewPager"
+        android:label="fragment_onboarding_view_pager"
+        tools:layout="@layout/fragment_onboarding_view_pager" >
         <action
-            android:id="@+id/action_GetStarted_to_Username"
-            app:destination="@id/Username" />
+            android:id="@+id/action_onboardingViewPager_to_homeViewPager"
+            app:destination="@id/homeViewPager"
+            app:popUpTo="@id/onboardingViewPager"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
-        android:id="@+id/Username"
-        android:name="com.manish.anonchat.view.Username"
-        android:label="@string/username_fragment_label"
-        tools:layout="@layout/fragment_username">
+        android:id="@+id/homeViewPager"
+        android:name="com.manish.anonchat.view.home.HomeViewPager"
+        android:label="fragment_home_view_pager"
+        tools:layout="@layout/fragment_home_view_pager" />
 
-        <action
-            android:id="@+id/action_Username_to_GetStarted"
-            app:destination="@id/GetStarted" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/Welcome"
-        android:name="com.manish.anonchat.view.Welcome"
-        android:label="@string/welcome_fragment_label"
-        tools:layout="@layout/fragment_welcome">
-
-        <action
-            android:id="@+id/action_Welcome_to_Messages"
-            app:destination="@id/Messages" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/Messages"
-        android:name="com.manish.anonchat.view.Messages"
-        android:label="@string/messages_fragment_label"
-        tools:layout="@layout/fragment_messages">
-
-        <action
-            android:id="@+id/action_Messages_to_Welcome"
-            app:destination="@id/Welcome" />
-    </fragment>
 </navigation>

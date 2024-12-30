@@ -1,4 +1,4 @@
-package com.manish.anonchat.view;
+package com.manish.anonchat.view.home;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -44,10 +44,10 @@ public class Welcome extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.viewMessages.setOnClickListener(v ->
-                NavHostFragment.findNavController(Welcome.this)
-                        .navigate(R.id.action_Welcome_to_Messages)
-        );
+//        binding.viewMessages.setOnClickListener(v ->
+//                NavHostFragment.findNavController(Welcome.this)
+//                        .navigate(R.id.action_Welcome_to_Messages)
+//        );
 
         binding.copyLink.setOnClickListener(v -> {
             String userProfileLink = binding.link.getText().toString();
