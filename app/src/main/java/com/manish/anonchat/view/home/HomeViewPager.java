@@ -4,11 +4,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.manish.anonchat.R;
 import com.manish.anonchat.databinding.FragmentHomeViewPagerBinding;
 import com.manish.anonchat.view.onboarding.GetStarted;
 import com.manish.anonchat.view.onboarding.Username;
@@ -22,6 +24,18 @@ public class HomeViewPager extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.viewPlay.setOnClickListener(v -> {
+           binding.homeViewPager.setCurrentItem(0, true);
+        });
+
+        binding.viewMessages.setOnClickListener(v -> {
+            binding.homeViewPager.setCurrentItem(1, true);
+        });
+
+        binding.settingsBtn.setOnClickListener(v -> {
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.action_homeViewPager_to_settings);
+        });
     }
 
     @Override

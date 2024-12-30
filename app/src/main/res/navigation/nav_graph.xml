@@ -21,6 +21,27 @@
         android:id="@+id/homeViewPager"
         android:name="com.manish.anonchat.view.home.HomeViewPager"
         android:label="fragment_home_view_pager"
-        tools:layout="@layout/fragment_home_view_pager" />
+        tools:layout="@layout/fragment_home_view_pager" >
+        <action
+            android:id="@+id/action_homeViewPager_to_settings"
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/homeViewPager"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.manish.anonchat.view.settings.Settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_to_homeViewPager"
+            app:destination="@id/homeViewPager" />
+        <action
+            android:id="@+id/action_settingsFragment_to_onboardingViewPager"
+            app:destination="@id/onboardingViewPager"
+            app:popUpTo="@id/settingsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
 </navigation>
