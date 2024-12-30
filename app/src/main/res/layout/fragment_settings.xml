@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.settings.Settings">
+    tools:context=".view.onboarding.Username">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:contentDescription="@string/layout_pattern"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:src="@drawable/pattern"
+        android:scaleType="centerCrop"
+        android:alpha="0.15"/>
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_marginTop="60dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/back"
+        android:src="@drawable/arrow"
+        android:scaleType="centerCrop"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67dp"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deleteAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="textStart"
+        android:background="@drawable/settings_button_bg"
+        android:layout_marginTop="30dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/delete_account"
+        android:textColor="@color/red"
+        android:drawablePadding="10dp"
+        android:drawableEnd="@drawable/round_keyboard_arrow_right_24"
+        android:paddingVertical="16dp"
+        android:drawableStart="@drawable/round_delete_outline_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+    <Button
+        android:id="@+id/termsOfUse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="textStart"
+        android:background="@drawable/settings_button_bg"
+        android:layout_marginTop="15dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/terms_of_use"
+        android:drawablePadding="10dp"
+        android:drawableEnd="@drawable/round_keyboard_arrow_right_24"
+        android:paddingVertical="16dp"
+        android:drawableStart="@drawable/round_safety_check_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteAccount" />
+
+    <Button
+        android:id="@+id/privacyPolicy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="textStart"
+        android:background="@drawable/settings_button_bg"
+        android:layout_marginTop="15dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/privacy_policy"
+        android:drawablePadding="10dp"
+        android:drawableEnd="@drawable/round_keyboard_arrow_right_24"
+        android:paddingVertical="16dp"
+        android:drawableStart="@drawable/rounded_shield_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/termsOfUse" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
